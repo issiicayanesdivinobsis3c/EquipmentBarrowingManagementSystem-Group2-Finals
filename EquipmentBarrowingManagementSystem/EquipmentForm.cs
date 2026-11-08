@@ -26,8 +26,6 @@ namespace EquipmentBarrowingManagementSystem
                 txtCategory.Text = equipment.Category;
                 txtTotalQty.Text = equipment.TotalQty.ToString();
                 txtAvailableQty.Text = equipment.AvailableQty.ToString();
-                //txtTotalQty.ReadOnly = true;
-                //txtAvailableQty.ReadOnly = true;
             }
         }
 
@@ -56,6 +54,8 @@ namespace EquipmentBarrowingManagementSystem
                     // Update existing equipment
                     equipment.ItemName = txtItemName.Text.Trim();
                     equipment.Category = txtCategory.Text.Trim();
+                    equipment.TotalQty = int.Parse(txtTotalQty.Text);
+                    equipment.AvailableQty = int.Parse(txtAvailableQty.Text);
                     equipmentDAO.UpdateEquipment(equipment);
                     MessageBox.Show("Equipment updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -88,19 +88,16 @@ namespace EquipmentBarrowingManagementSystem
                 return false;
             }
 
-            if (equipment == null)
+            if (string.IsNullOrWhiteSpace(txtTotalQty.Text) || !int.TryParse(txtTotalQty.Text, out int total) || total < 0)
             {
-                if (string.IsNullOrWhiteSpace(txtTotalQty.Text) || !int.TryParse(txtTotalQty.Text, out int total) || total < 0)
-                {
-                    MessageBox.Show("Please enter a valid total quantity.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
+                MessageBox.Show("Please enter a valid total quantity.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
-                if (string.IsNullOrWhiteSpace(txtAvailableQty.Text) || !int.TryParse(txtAvailableQty.Text, out int available) || available < 0 || available > total)
-                {
-                    MessageBox.Show("Please enter a valid available quantity (must be <= total quantity).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
+            if (string.IsNullOrWhiteSpace(txtAvailableQty.Text) || !int.TryParse(txtAvailableQty.Text, out int available) || available < 0 || available > total)
+            {
+                MessageBox.Show("Please enter a valid available quantity (must be <= total quantity).", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
 
             return true;
