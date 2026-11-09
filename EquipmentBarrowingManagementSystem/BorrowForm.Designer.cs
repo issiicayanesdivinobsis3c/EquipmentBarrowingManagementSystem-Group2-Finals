@@ -62,7 +62,7 @@ namespace EquipmentBarrowingManagementSystem
             this.lblAvailable.TabIndex = 2;
             this.lblAvailable.Text = "Available: 0";
             // 
-            // lblBorrowedBy
+            // lblBarrowedBy
             // 
             this.lblBorrowedBy.AutoSize = true;
             this.lblBorrowedBy.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,7 +73,7 @@ namespace EquipmentBarrowingManagementSystem
             this.lblBorrowedBy.TabIndex = 3;
             this.lblBorrowedBy.Text = "Borrowed By:";
             // 
-            // txtBorrowedBy
+            // txtBarrowedBy
             // 
             this.txtBorrowedBy.Location = new System.Drawing.Point(120, 95);
             this.txtBorrowedBy.Name = "txtBorrowedBy";
@@ -103,7 +103,7 @@ namespace EquipmentBarrowingManagementSystem
             0,
             0});
             // 
-            // lblBorrowDate
+            // lblBarrowDate
             // 
             this.lblBorrowDate.AutoSize = true;
             this.lblBorrowDate.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,14 +114,14 @@ namespace EquipmentBarrowingManagementSystem
             this.lblBorrowDate.TabIndex = 7;
             this.lblBorrowDate.Text = "Borrow Date:";
             // 
-            // dtBorrowDate
+            // dtBarrowDate
             // 
             this.dtBorrowDate.Location = new System.Drawing.Point(120, 175);
             this.dtBorrowDate.Name = "dtBorrowDate";
             this.dtBorrowDate.Size = new System.Drawing.Size(250, 20);
             this.dtBorrowDate.TabIndex = 8;
             // 
-            // btnBorrow
+            // btnBarrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrow.Location = new System.Drawing.Point(120, 215);
@@ -143,7 +143,7 @@ namespace EquipmentBarrowingManagementSystem
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // BorrowForm
+            // BarrowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
