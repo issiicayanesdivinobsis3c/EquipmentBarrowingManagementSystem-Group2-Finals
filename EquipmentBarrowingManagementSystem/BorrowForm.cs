@@ -56,7 +56,7 @@ namespace EquipmentBarrowingManagementSystem
                     Equipment selected = equipmentList[selectedIndex];
                     lblAvailable.Text = "Available: " + selected.AvailableQty;
 
-                    // Correct NumericUpDown usage (was incorrectly using .Text before)
+                    
                     txtQuantity.Minimum = 1;
                     txtQuantity.Maximum = Math.Max(1, selected.AvailableQty);
                     txtQuantity.Value = 1;
@@ -112,7 +112,7 @@ namespace EquipmentBarrowingManagementSystem
             this.Close();
         }
 
-        // Renamed from Validate() to avoid conflict with Control.Validate()
+        
         private bool ValidateInputs()
         {
             if (cmbEquipment.SelectedItem == null)
